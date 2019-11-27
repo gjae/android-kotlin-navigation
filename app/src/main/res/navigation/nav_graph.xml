@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/main2Activity">
+
+    <activity
+        android:id="@+id/main2Activity"
+        android:name="com.example.navigationtest.Main2Activity"
+        android:label="activity_main2"
+        tools:layout="@layout/activity_main2" >
+        <action
+            android:id="@+id/action_main2Activity_to_nested_navigation"
+            app:destination="@id/nested_navigation" />
+        <action
+            android:id="@+id/action_main2Activity_to_blankView"
+            app:destination="@id/blankView" />
+    </activity>
+    <navigation
+        android:id="@+id/nested_navigation"
+        app:startDestination="@id/main4Activity" >
+        <activity
+            android:id="@+id/main4Activity"
+            android:name="com.example.navigationtest.Main4Activity"
+            android:label="activity_main4"
+            tools:layout="@layout/activity_main4" />
+        <activity
+            android:id="@+id/main3Activity"
+            android:name="com.example.navigationtest.Main3Activity"
+            android:label="activity_main3"
+            tools:layout="@layout/activity_main3" />
+    </navigation>
+    <fragment
+        android:id="@+id/blankView"
+        android:name="com.example.navigationtest.BlankView"
+        android:label="fragment_blank_view"
+        tools:layout="@layout/fragment_blank_view" />
+</navigation>
